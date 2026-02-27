@@ -909,7 +909,15 @@ button {
 /* ── ABOUT ── */
 .about {
   background: var(--bg-alt);
-  padding-bottom: 96px;
+  height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.about>.container,
+.contact>.container {
+  width: 100%;
 }
 
 .about>.container>.section-label {
@@ -1045,6 +1053,8 @@ button {
 /* ── CONTACT ── */
 .contact {
   background: var(--bg);
+  padding-top: 56px;
+  padding-bottom: 40px;
 }
 
 .contact-grid {
