@@ -115,34 +115,38 @@
         <div class="project-card fade-in">
           <div class="project-card-inner">
             <div class="project-header">
-              <h3 class="project-title">Project Management System</h3>
+              <h3 class="project-title">Project Flow — Agile Management System</h3>
               <div class="project-meta">
                 <span class="project-status status-done">Hoàn thành</span>
               </div>
               <div class="project-tags">
                 <span class="tag">ASP.NET Core 8</span>
                 <span class="tag">SQL Server</span>
+                <span class="tag">Entity Framework</span>
                 <span class="tag">JWT</span>
                 <span class="tag">Gemini AI</span>
-                <span class="tag">Swagger</span>
+                <span class="tag">SignalR</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">Tailwind CSS</span>
               </div>
             </div>
 
             <div class="project-body">
               <p class="project-desc">
-                Hệ thống quản lý dự án theo quy trình Scrum — quản lý Backlog, Sprint lifecycle, Kanban board kéo thả.
-                Tích hợp <strong>Google Gemini AI</strong> để tự động tạo mô tả task và phân chia subtask.
+                Hệ thống quản lý dự án theo quy trình <strong>Scrum</strong> — quản lý Backlog, Sprint lifecycle đầy đủ (Planning → Active → Complete),
+                Kanban board kéo thả. Tích hợp <strong>Google Gemini AI</strong> để tự động tạo mô tả User Story, gợi ý phân chia
+                Subtask và ước lượng Story Points. Đồ án chuyên ngành Công nghệ phần mềm.
               </p>
 
               <!-- Architecture mini diagram -->
               <div class="arch-diagram">
                 <div class="arch-label">Kiến trúc hệ thống</div>
                 <div class="arch-flow">
-                  <div class="arch-node">Client<br /><small>JS/HTML</small></div>
+                  <div class="arch-node">Client<br /><small>HTML/JS/Tailwind</small></div>
                   <div class="arch-arrow">→</div>
-                  <div class="arch-node accent">API<br /><small>ASP.NET Core</small></div>
+                  <div class="arch-node accent">API<br /><small>ASP.NET Core 8</small></div>
                   <div class="arch-arrow">→</div>
-                  <div class="arch-node">Service<br /><small>Business Logic</small></div>
+                  <div class="arch-node">EF Core<br /><small>Business Logic</small></div>
                   <div class="arch-arrow">→</div>
                   <div class="arch-node">DB<br /><small>SQL Server</small></div>
                 </div>
@@ -172,17 +176,19 @@
 
               <div class="project-challenge">
                 <span class="challenge-label">⚡ Thách thức kỹ thuật</span>
-                <p>Implement JWT Bearer Authentication với phân quyền Admin/User, tích hợp Gemini API để sinh nội dung
-                  tự động, và xử lý drag &amp; drop task tối ưu hiệu suất.</p>
+                <p>Xây dựng Sprint lifecycle tự động chuyển unfinished tasks khi đóng Sprint, tích hợp Gemini API sinh nội dung
+                  theo ngữ cảnh, kéo thả Drag &amp; Drop tối ưu hiệu suất, Burn-down chart realtime với Chart.js.</p>
               </div>
             </div>
 
             <div class="project-footer">
               <div class="project-features">
                 <span class="feature">✓ JWT Auth &amp; RBAC</span>
-                <span class="feature">✓ REST API + Swagger</span>
-                <span class="feature">✓ AI Integration</span>
-                <span class="feature">✓ Dashboard &amp; Charts</span>
+                <span class="feature">✓ Scrum Board + Kanban</span>
+                <span class="feature">✓ AI Smart Description</span>
+                <span class="feature">✓ Burn-down Chart</span>
+                <span class="feature">✓ Notifications</span>
+                <span class="feature">✓ Activity Logs</span>
               </div>
               <div class="project-links">
                 <a href="https://github.com/dogiaan611/DACN_ProjectManagement" target="_blank" rel="noopener"
@@ -218,17 +224,21 @@
                 <span class="project-status status-wip">Đang phát triển</span>
               </div>
               <div class="project-tags">
-                <span class="tag">Spring Boot</span>
+                <span class="tag">Spring Boot 3</span>
+                <span class="tag">Spring Security</span>
                 <span class="tag">MySQL</span>
+                <span class="tag">JPA / Hibernate</span>
                 <span class="tag">JWT</span>
                 <span class="tag">REST API</span>
+                <span class="tag">Swagger</span>
               </div>
             </div>
 
             <div class="project-body">
               <p class="project-desc">
-                Nền tảng học trực tuyến xây dựng bằng <strong>Spring Boot</strong> — quản lý khóa học, bài học, học viên
-                và tiến độ học tập. REST API chuẩn với JWT authentication.
+                Nền tảng học trực tuyến được xây dựng bằng <strong>Spring Boot 3</strong> — hỗ trợ quản lý Khóa học, Bài học
+                theo chương, Đăng ký học (Enrollment), Hệ thống Quiz có chấm điểm tự động, và phân quyền
+                <strong>Admin / Teacher / Student</strong> với Spring Security + JWT.
               </p>
 
               <!-- Architecture mini diagram -->
@@ -237,25 +247,29 @@
                 <div class="arch-flow">
                   <div class="arch-node">Client<br /><small>REST</small></div>
                   <div class="arch-arrow">→</div>
-                  <div class="arch-node accent">API<br /><small>Spring Boot</small></div>
+                  <div class="arch-node accent">API<br /><small>Spring Boot 3</small></div>
                   <div class="arch-arrow">→</div>
-                  <div class="arch-node">Service<br /><small>Layer</small></div>
+                  <div class="arch-node">Service<br /><small>Business Layer</small></div>
                   <div class="arch-arrow">→</div>
                   <div class="arch-node">DB<br /><small>MySQL</small></div>
                 </div>
               </div>
 
-              <div class="coming-soon-banner">
-                <span>🚧 Đang trong quá trình phát triển</span>
+              <div class="project-challenge">
+                <span class="challenge-label">⚡ Thách thức kỹ thuật</span>
+                <p>Thiết kế phân quyền RBAC 3 cấp (Admin/Teacher/Student), implement Quiz System với chấm điểm
+                  tự động, theo dõi tiến độ học tập (progress tracking) và ngăn chặn trùng lặp enrollment.</p>
               </div>
             </div>
 
             <div class="project-footer">
               <div class="project-features">
-                <span class="feature">✓ Spring Security</span>
-                <span class="feature">✓ JWT Auth</span>
+                <span class="feature">✓ Spring Security + JWT</span>
+                <span class="feature">✓ Course &amp; Lesson API</span>
+                <span class="feature">✓ Enrollment System</span>
+                <span class="feature">✓ Quiz &amp; Auto Grading</span>
                 <span class="feature">✓ JPA / Hibernate</span>
-                <span class="feature">⏳ Swagger Docs</span>
+                <span class="feature">✓ Swagger UI</span>
               </div>
               <div class="project-links">
                 <a href="https://github.com/dogiaan611/e-learning" target="_blank" rel="noopener" class="btn-link">
