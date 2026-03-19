@@ -675,9 +675,9 @@ button {
 .demo-slider {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  overflow: hidden;
   background: var(--bg-alt);
 }
+
 
 .demo-slider-label {
   font-size: 0.72rem;
@@ -744,6 +744,44 @@ button {
   font-family: var(--font-mono);
   min-width: 36px;
   text-align: center;
+}
+
+/* WIP Overlay for demo slider */
+.demo-wip-overlay {
+  display: none;
+}
+
+.demo-slider--wip .demo-track {
+  display: none;
+}
+
+.demo-slider--wip .demo-wip-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 280px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.demo-wip-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.demo-wip-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #374151;
+  letter-spacing: -0.01em;
+}
+
+.demo-wip-sub {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  font-family: var(--font-mono);
 }
 
 .project-challenge {
