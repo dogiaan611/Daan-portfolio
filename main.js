@@ -202,3 +202,57 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') lightboxNav(1);
   if (e.key === 'ArrowLeft') lightboxNav(-1);
 });
+
+// ── Contact Form Handling (EmailJS) ──
+const contactForm = document.getElementById('contactForm');
+const feedbackEl = document.getElementById('contactFeedback');
+
+// Lưu ý: Đỗ Gia Ân cần thay đổi các ID dưới đây bằng ID từ tài khoản EmailJS (emailjs.com)
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Thay thế bằng Public Key
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Thay thế bằng Service ID
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Thay thế bằng Template ID
+
+if (contactForm && typeof emailjs !== 'undefined') {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const btnText = btn.querySelector('.btn-text');
+    const originalText = btnText.textContent;
+    
+    // Trạng thái đang gửi
+    btn.disabled = true;
+    btnText.textContent = 'Đang gửi...';
+    feedbackEl.textContent = '';
+    feedbackEl.className = 'form-feedback';
+
+    // Gửi form qua EmailJS
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+      .then(() => {
+        feedbackEl.textContent = 'Cảm ơn! Tin nhắn của bạn đã được gửi thành công.';
+        feedbackEl.classList.add('success');
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        feedbackEl.textContent = 'Có lỗi xảy ra. Vui lòng thử lại sau hoặc gửi trực tiếp đến dogiaan611@gmail.com';
+        feedbackEl.classList.add('error');
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btnText.textContent = originalText;
+        
+        // Ẩn thông báo sau 5 giây
+        setTimeout(() => {
+          feedbackEl.style.opacity = '0';
+          setTimeout(() => {
+            feedbackEl.textContent = '';
+            feedbackEl.className = 'form-feedback';
+            feedbackEl.style.opacity = '1';
+          }, 500);
+        }, 5000);
+      });
+  });
+}
