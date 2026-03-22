@@ -208,9 +208,9 @@ const contactForm = document.getElementById('contactForm');
 const feedbackEl = document.getElementById('contactFeedback');
 
 // Lưu ý: Đỗ Gia Ân cần thay đổi các ID dưới đây bằng ID từ tài khoản EmailJS (emailjs.com)
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Thay thế bằng Public Key
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Thay thế bằng Service ID
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Thay thế bằng Template ID
+const EMAILJS_PUBLIC_KEY = "8cVKqqY0uCqj3zY67"; // Thay thế bằng Public Key
+const EMAILJS_SERVICE_ID = "service_ldzpxn3"; // Thay thế bằng Service ID
+const EMAILJS_TEMPLATE_ID = "template_wge5w15"; // Thay thế bằng Template ID
 
 if (contactForm && typeof emailjs !== 'undefined') {
   emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -221,7 +221,7 @@ if (contactForm && typeof emailjs !== 'undefined') {
     const btn = contactForm.querySelector('button[type="submit"]');
     const btnText = btn.querySelector('.btn-text');
     const originalText = btnText.textContent;
-    
+
     // Trạng thái đang gửi
     btn.disabled = true;
     btnText.textContent = 'Đang gửi...';
@@ -243,7 +243,7 @@ if (contactForm && typeof emailjs !== 'undefined') {
       .finally(() => {
         btn.disabled = false;
         btnText.textContent = originalText;
-        
+
         // Ẩn thông báo sau 5 giây
         setTimeout(() => {
           feedbackEl.style.opacity = '0';
